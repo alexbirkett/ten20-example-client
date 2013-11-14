@@ -1,0 +1,25 @@
+{
+    "name": "ten20-example-client",
+    "version": "0.0.1",
+    "description": "Example client for ten20",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/alexbirkett/ten20-example-client.git"
+    },
+    "keywords": [
+        "ten20",
+        "GPS",
+        "tracker"
+    ],
+    "author": "Alex Birkett",
+    "license": "BSD",
+    "bugs": {
+        "url": "https://github.com/alexbirkett/ten20-example-client/issues"
+    },
+    "dependencies": {
+        "async": "0.2.9",
+        "optimist": "0.6.0",
+        "request": "2.27.x"
+    }
+}
