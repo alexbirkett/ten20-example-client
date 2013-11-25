@@ -28,7 +28,7 @@ var argv = optimist.usage('Usage: $0  --serial [string] --url [string] --frequen
    default('a',52.80323).
    default('n', -1.6193).
    default('s', 14234234234).
-   default('u', 'http://localhost:3000/location')
+   default('u', 'http://localhost:3000/location/update_by_serial')
    .argv;
 
 // tool functions
