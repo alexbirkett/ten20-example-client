@@ -1,7 +1,6 @@
 var optimist = require('optimist');
 var requestApi = require('request');
 var request = requestApi.defaults({followRedirect: false, jar: requestApi.jar()});
-var async = require('async');
 
 var argv = optimist.usage('Usage: $0  --serial [string] --url [string] --frequency [num]').
     options('s', {
@@ -28,7 +27,7 @@ var argv = optimist.usage('Usage: $0  --serial [string] --url [string] --frequen
    default('a',52.80323).
    default('n', -1.6193).
    default('s', 14234234234).
-   default('u', 'http://localhost:3000/location/update_by_serial')
+   default('u', 'http://localhost:3000/message')
    .argv;
 
 // tool functions
@@ -62,16 +61,16 @@ var getNextLng = function() {
 
 var postNextLocation = function() {
 
-    var location = {
-        timestamp: new Date().getTime(),
+    var message = {
+        timestamp: new Date(),
         latitude: getNextLat(),
         longitude: getNextLng(),
         serial: argv.serial + ''
     };
 
-    console.log('posting location');
-    console.log(location);
-    request.post({url: argv.url + '/' + argv.serial, json: location}, function(err, response, body) {
+    console.log('posting message');
+    console.log(message);
+    request.post({url: argv.url + '/' + argv.serial, json: message}, function(err, response, body) {
         if (err) {
             console.log('error ' + err);
         }
