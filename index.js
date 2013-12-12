@@ -69,18 +69,21 @@ var postNextLocation = function() {
     };
 
     console.log('posting message');
-    console.log(message);
+    //console.log(message);
+
+    var timeBefore = new Date().getTime();
+
     request.post({url: argv.url + '/' + argv.serial, json: message}, function(err, response, body) {
         if (err) {
             console.log('error ' + err);
         }
         if (response) {
-            console.log('status ' + response.statusCode);
+            console.log('status ' + response.statusCode + ' request took ' + (new Date().getTime() - timeBefore));
         }
-
+        setTimeout(postNextLocation, argv.frequency * 1000);
     });
 
-    setTimeout(postNextLocation, argv.frequency * 1000);
+
 }
 
 postNextLocation();
