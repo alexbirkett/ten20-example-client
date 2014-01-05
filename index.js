@@ -27,7 +27,7 @@ var argv = optimist.usage('Usage: $0  --serial [string] --url [string] --frequen
    default('a',52.80323).
    default('n', -1.6193).
    default('s', 14234234234).
-   default('u', 'http://localhost:3000/message')
+   default('u', 'http://localhost:3000')
    .argv;
 
 // tool functions
@@ -73,7 +73,7 @@ var postNextLocation = function() {
 
     var timeBefore = new Date().getTime();
 
-    request.post({url: argv.url + '/' + argv.serial, json: message}, function(err, response, body) {
+    request.post({url: argv.url + '/message/' + argv.serial, json: message}, function(err, response, body) {
         if (err) {
             console.log('error ' + err);
         }
