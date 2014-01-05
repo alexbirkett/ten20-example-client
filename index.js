@@ -23,7 +23,7 @@ var argv = optimist.usage('Usage: $0  --serial [string] --url [string] --frequen
         alias : 'longitude',
         describe: 'inital longitude'
     }).
-   default('f',1).
+   default('f',20).
    default('a',52.80323).
    default('n', -1.6193).
    default('s', 14234234234).
