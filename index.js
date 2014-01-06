@@ -62,9 +62,11 @@ var getNextLng = function() {
 var postNextLocation = function() {
 
     var message = {
-        timestamp: new Date(),
-        latitude: getNextLat(),
-        longitude: getNextLng(),
+        location: {
+            timestamp: new Date(),
+            latitude: getNextLat(),
+            longitude: getNextLng()
+        },
         serial: argv.serial + ''
     };
 
