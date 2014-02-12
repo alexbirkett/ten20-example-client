@@ -12,7 +12,7 @@ var argv = optimist.usage('Usage: $0  --email [string] --password [string] --url
         alias : 'url',
         describe: 'url'
     }).
-    default('e', 'test@ten20.com').
+    default('e', 'test@ten20live.com').
     default('p','test').
     default('u', 'http://localhost:3000').argv;
 
